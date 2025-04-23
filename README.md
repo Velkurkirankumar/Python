@@ -387,3 +387,164 @@ print("Welcome to python")
 
 ### Playing with numeric data
 [Refer Here](https://github.com/asquarezone/Python/blob/main/Apr25/foundations/datatypes-intro.ipynb)  for jupyter notebook
+
+
+# April 23
+
+## Naming conventions
+- Pascal Casing: In this case every word starts with capital case
+```
+Value
+MyValue
+MyNewValue
+```
+- Camel Casing
+```
+value = "hello"
+myValue = "hello"
+myNewValue = "hello"
+```
+
+- Snake Casing
+```
+value = "hello"
+my_value = "hello"
+my_new_value = "hello"
+```
+
+- Capital Snake Casing
+```
+VALUE = "hello"
+MY_VALUE = "hello"
+MY_NEW_VALUE = "hello"
+```
+
+- In python for
+    - variables we use snake casing
+    - function names we use snake casing
+    - class names we use Pascal Casing
+    - constant values we use Capital Snake casing
+
+### Spacing in python
+- Consider the following
+`10**3`
+
+- It recommeneded to use
+`10 ** 3`
+
+### Indentation in python
+- Python follows strict [indentation](https://www.geeksforgeeks.org/indentation-in-python/)
+
+### Operators and Numeric Data types
+- [Refer Here](https://www.programiz.com/python-programming/operators) for operators
+
+
+### Doc Strings
+- [Refer Here](https://www.programiz.com/python-programming/docstrings) for doc strings
+### First Program
+- Average of marks
+- Topics
+    - doc string
+    - input
+    - typecasting
+- [Refer Here](https://github.com/asquarezone/Python/blob/main/Apr25/foundations/average.py)
+
+```
+"""This program is to learn numeric types and its 
+operators
+
+Topics:
+  input
+  typecast
+"""
+
+maths = float(input("Enter maths marks: "))
+science = float(input("Enter science marks: "))
+social = float(input("Enter social marks: "))
+average = (maths + science + social) / 3
+print(average)
+```
+
+- Write a program to calculate compound intrest
+
+### Conditional expressions
+- comparision operators
+- logical operators
+
+### Conditionals
+- if statement  
+```
+if <conditional-expression>:
+   ....
+   ....
+```
+
+- if else
+
+```
+if <conditional-expression>:
+   ....
+   ....
+else:
+   ....
+   ....
+```
+
+- if elif else
+
+```
+if <conditional-expression>:
+   ....
+   ....
+elif <conditional-expression>:
+   ....
+   ....
+elif <conditional-expression>:
+   ....
+   ....
+else:
+   ....
+   ....
+```
+
+- Program to print different id cards according to age in india
+
+
+| Minimum Age    | Identity Cards                                                        |
+|----------------|----------------------------------------------------------------------|
+| Birth          | Birth Certificate, Aadhaar Card (can be obtained for newborns)       |
+| Any Age        | Passport, PAN Card, Bank/Post Office Passbook                        |
+| Enrolled       | School/College ID Card (for currently enrolled students)             |
+| No specific age| Ration Card                                                          |
+| 18 years       | Voter ID Card (EPIC), Driving License                                |
+| 60 years       | Senior Citizen Card (eligibility criteria might vary slightly by state) |
+
+```
+age = int(input("Enter your age: "))
+print("You are eligbile for ")
+print("Birth Certificate \nAadhaar Card \nPassport \nPAN Card \nBank/Post Office Passbook")
+if age >= 18:
+    print("Voter ID Card (EPIC) \nDriving License")
+if age >= 60:
+    print("Senior Citizen Card")
+```
+
+### looping
+- In python we have two approaches
+    - while
+    - for
+
+- while
+    - [while](https://www.programiz.com/python-programming/while-loop)
+- Syntax
+
+```
+while <conditional-expression>:
+   ...
+   ...
+   ...
+```
+
+- To exit out of while loop we have two options
+    - conditonal expression becoming false
+    - break keyword
