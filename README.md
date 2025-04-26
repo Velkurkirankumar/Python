@@ -548,3 +548,193 @@ while <conditional-expression>:
 - To exit out of while loop we have two options
     - conditonal expression becoming false
     - break keyword
+
+
+# April 24
+
+### Looping constructs while contd
+
+#### Project euler 3
+- [Refer](https://projecteuler.net/problem=3) Here for problem
+- Largest prime factor of a number
+    - it has to be a factor
+    - it has to be a prime
+    - it has to be a largest possible
+- Example
+```
+70 =>
+   factors: 2,5,7,10,14,35
+   prime: 2,5,7
+   largest: 7
+
+27 =>
+   factors: 3,9
+   prime: 3
+   largest: 3
+```
+
+- Solution for prime number
+```
+Hi Chaitra,
+number = 7
+is_prime = True
+index = 2
+while index < number
+   if number%index == 0
+      is_prime = False
+      break
+   index = index + 1
+```
+
+- Python
+```
+number = 13195
+factor = number // 2
+while factor > 1:
+    # check if it is factor
+    if number % factor == 0:
+        # if factor also check if index it is prime
+        is_prime = True
+        index = 2
+        while index <= factor//2 :
+            if factor % index == 0:
+                is_prime = False
+                break
+            index = index + 1
+        if is_prime:
+            print(factor)
+            break
+    factor = factor - 1
+```
+
+- Project euler 5
+- [Refer Here](https://projecteuler.net/problem=5)
+
+- Python
+```
+# Smallest multiple
+number = 20
+
+# boundary
+index = 1
+factorial = 1
+while index <= number:
+    factorial = factorial * index
+    index += 1
+
+max = factorial
+index = number
+while index <= factorial:
+    # check if is divisible by all numbers from 2 to number
+    divisible = True
+    number_index = 2
+    while number_index <= number:
+        if index % number_index != 0:
+            divisible = False
+            break
+        number_index += 1
+    if divisible:
+        print(index)
+        break
+    index += number
+```
+
+
+### Project euler 6: Sum square difference
+- [Refer Here](https://projecteuler.net/problem=6)
+
+```
+# Project euler problem 6
+
+number = 100
+
+sum = (number * (number + 1)) // 2
+
+square_sum = sum ** 2
+
+square_number = 0
+index = 1
+while index <= number:
+    square_number += index ** 2
+    index += 1
+print(square_sum - square_number)
+```
+
+
+# April 26
+
+## Sequence Types
+- All the sequence types can hold multiple values in it
+- Sequence types supports indexes where we have positive and negative indexes
+
+![image](https://github.com/user-attachments/assets/6b219153-7b30-43f6-92ee-175aa32473c5)
+
+![image](https://github.com/user-attachments/assets/a494eb74-7736-4f9c-a0f5-05803b312798)
+
+- All sequence types support len function
+- Sequence types support slicing start-index:stop-index:step
+    - start-index: default value is 0
+    - stop-index: default value is length
+    - step: it has default value of 1
+- [Refer Here](https://www.programiz.com/python-programming/variables-datatypes) for data types
+- Sequence types:
+    - list
+    - tuple
+    - range: it is used to create sequences
+- list:
+    - can hold multiple types
+    - is mutable
+    - syntax: []
+- tuple:
+    - can hold multiple types
+    - are immutable
+    - syntax: ()
+- We can convert between list and tuple
+- We can loop through lists, tuple using while
+- For loop in python [Refer Here](https://www.programiz.com/python-programming/for-loop)
+
+```
+for item in items:
+    print(item)
+```
+
+- [Range](https://www.programiz.com/python-programming/methods/built-in/range): This is used to generate number sequences
+- Python set: [Refer Here](https://www.programiz.com/python-programming/set)
+- [Refer Here](https://github.com/asquarezone/Python/blob/main/Apr25/foundations/sequences.ipynb) for jupyter notebook
+
+## Modules and Functions
+
+- One of the major principle in programming in Reusability which revolves around DRY principle (Dont Repeat yourself)
+- Module is a python file
+- Function is a reusable code which exists in a module
+- modules can be reused or functions, classes or variables in module can be reused
+- To document modules and functions lets use docstrings, Lets use [Google’s style guide](https://google.github.io/styleguide/pyguide.html) for this
+- [Docstring for a module](https://google.github.io/styleguide/pyguide.html#382-modules)
+- [Docstring for function and methods](https://google.github.io/styleguide/pyguide.html#383-functions-and-methods)
+- [Functions](https://www.programiz.com/python-programming/function)
+- To name a function we use snake casing
+- Module can be used in two ways
+    - executor:
+        - we are executing the module python <module-name>.py
+    - library:
+        - other module imports and calls the reusable functions (or classes or variable)
+- Module import options
+- option 1: import
+```
+import utils
+
+if utils.is_even(10):
+    print("even")
+```
+- option 2: from import
+```
+from utils import is_even
+
+if is_even(10):
+    print("even")
+```
+
+- Whenever you see anything in python with double underscores (dunder) around it, it has special purpose and is defined by python.
+- Lets discuss about a special dunder variable __name__ which will have two possible values
+    - __main__ when the module is executed directly
+    - module-name when module is imported
