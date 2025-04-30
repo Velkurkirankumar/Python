@@ -738,3 +738,226 @@ if is_even(10):
 - Lets discuss about a special dunder variable __name__ which will have two possible values
     - __main__ when the module is executed directly
     - module-name when module is imported
+
+# April 27
+
+### Functions contd
+- Refer Here for functions
+- Refer Here for jupyter notebook
+
+### Exercise:
+- Write a function to find the sum of numbers in number plate for numerology
+```
+9999 => 9 + 9 + 9 + 9 => 36 => 3 + 6 => 9
+8273 => 8 + 2 + 7 + 3 => 20 => 2 + 0 => 2
+```
+
+- solution
+```
+def sum_digits(number):
+    sum = 0
+    while number > 0:
+        digit = number % 10 
+        sum = sum + digit
+        number = number // 10
+        if number == 0 and sum > 9:
+            number = sum
+            sum = 0
+    return sum
+```
+
+### Modules and packages
+- Refer Here for the package
+- Refer Here for the sample package and using the package in the module main.py
+
+### Finding methods for a type
+- List methods
+- Tuple methods
+- set methods
+- str methods
+
+#### Problem
+- Take a string as an input and return bool if the string is numeric
+```
+def is_numeric(value):
+    return value.isnumeric()
+```
+
+- Type Hinting in Python
+- expert usage of python functions
+- object oriented programming
+- str methods
+- list methods
+
+
+# April 28
+
+- List, Tuple, set methods
+- Refer Here for the list methods
+- Refer Here for tuple methods
+- Refer Here for set methods
+- Membership operators:
+    - in
+    - not in
+- Refer Here for the jupyter notebook created in the class
+
+### Dictionary
+- Python dictionaries contain key value pairs.
+- Keys must be unique
+- Keys must be immutable
+- Refer Here for python dictionary
+- Refer Here for dictionary methods
+- Refer Here for the jupyter notebook created in the class
+
+### Python strings
+- Refer Here for strings
+- Refer Here for sample notebook written
+
+# April 29
+
+## Procedural Programming
+- Procedural Programming is like a recipe
+    - inputs
+    - steps (sequence)
+    - output
+
+### Object Oriented Programming
+- Object:
+    - contains
+    - capabilities
+
+#### Examples
+- Bank Account
+```
+BankAccount
+  contains:
+     account number
+     account type
+     balance
+  characteristics:
+    transfer
+    withdraw
+    deposit
+```        
+
+- Laptop
+```
+contains:
+  configuration
+     cpu
+     ram
+     storgae
+  os
+  features
+characteristics:
+  start
+  shutdown
+  browser
+  ...
+  ...
+```
+
+- Library
+```
+book
+shelf
+newspaper
+transaction
+librarian
+user
+```
+
+- Object oriented programming has two important concepts
+    - Class: Here we are building a cookie cutter/ design (Blueprint)
+        - In programming world we write class to specify structure
+    - Object: This is what we operate on (cookie/home/ac).
+        - We create object from class and object has memory/cpu/resources attached to it.
+
+#### Writing a class
+- Class is a blueprint
+    - members are contents (variables)
+    - methods are capabilities (functions)
+- Classes or objects can have relationships
+- To classify these relationship all we have to figure out is
+    - is-a relationship
+    - has-a relationship
+- Technically in OOD we have 4 types of relationships that can exist
+    - Association: uses
+    - Aggregation: Weak has-a
+    - Composition: Strong has-a
+    - Inheritence: is-a
+
+#### Exercise
+- Identify classes for Restaurant, we are supposed to build a Billing system
+    - Restaurant
+    - Menu
+    - MenuItem
+    - Tables list<Table>
+    - Order
+    - OrderItem
+    - Bill
+    - Payment
+
+- Menu
+```
+contents:
+        menu items
+```
+
+- Menu Item
+```
+contents:
+  id
+  category
+  price
+  name
+```
+
+- Table
+```
+content:
+   number
+   capacity
+```
+
+- Order
+```
+content:
+  id
+  list<orderItem>
+  status
+capability:
+  generate_bill()
+  cancel
+```
+
+- OrderItem
+```
+content:
+  id
+  menuitem_id
+  quanity
+```
+
+- Bill
+```
+contents:
+  id
+  Order
+  amount
+  tax
+  total
+capabilites:
+  pay()
+```
+
+### UML Diagrams
+- [Refer Here](https://online.visual-paradigm.com/) for visual paradigm
+
+### Principles
+- Abstraction
+- Encapsulation
+- Polymorphism
+- SOLID
+- DuckTyping (Python special)
+- [Refer Here](https://github.com/asquarezone/Python/blob/main/Apr25/foundations/oop_intro.ipynb) for the notebook created in the class
